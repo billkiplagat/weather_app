@@ -53,6 +53,9 @@ def get_weather():
                                current_wind_speed=current_wind_speed, current_conditions=current_conditions,
                                forecast_days=forecast_days)
 
+    # For GET requests, render the form
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run()
