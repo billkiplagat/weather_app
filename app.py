@@ -5,12 +5,12 @@ app = Flask(__name__)
 API_KEY = open('api_key', 'r').read()
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+# @app.route('/')
+# def hello_world():
+#     return 'Welcome to WeatherWise'
 
 
-@app.route('/weather', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def get_weather():
     if request.method == 'POST':
         city = request.form.get('city')
