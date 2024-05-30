@@ -1,121 +1,188 @@
-/* Styles for index.html, weather.html, and error.html */
+/*!* Styles for index.html, weather.html, and error.html *!*/
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f0f0f0;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.container {*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*form {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*input[type="text"] {*/
+/*    padding: 10px;*/
+/*    width: 200px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*input[type="submit"] {*/
+/*    padding: 10px 20px;*/
+/*    background-color: #007bff;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*input[type="submit"]:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+/*h1 {*/
+/*    color: #333;*/
+/*}*/
+
+/*h2 {*/
+/*    color: #007bff;*/
+/*}*/
+
+/*ul {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*}*/
+
+/*li {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*!* Animation for index.html *!*/
+
+/*@keyframes fadeIn {*/
+/*    from { opacity: 0; }*/
+/*    to { opacity: 1; }*/
+/*}*/
+
+/*.fadeIn {*/
+/*    animation-name: fadeIn;*/
+/*    animation-duration: 1s;*/
+/*}*/
+
+/*!* Animation for weather.html *!*/
+
+/*@keyframes slideIn {*/
+/*    from {*/
+/*        transform: translateY(-20px);*/
+/*        opacity: 0;*/
+/*    }*/
+/*    to {*/
+/*        transform: translateY(0);*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
+
+/*.slideIn {*/
+/*    animation-name: slideIn;*/
+/*    animation-duration: 0.5s;*/
+/*}*/
+
+/*!* Styles for forecast in weather.html *!*/
+
+/*.forecast {*/
+/*    margin-top: 20px;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.forecast li {*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.forecast li h3 {*/
+/*    margin-top: 0;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*.forecast li p {*/
+/*    margin: 0;*/
+/*    color: #555;*/
+/*}*/
+
+/*.day {*/
+/*    flex: 0 0 30%; !* Adjust the width as needed *!*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    margin: 5px;*/
+/*    text-align: center;*/
+/*}*/
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    color: #333;
 }
 
 .container {
-    max-width: 800px;
+    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    color: #ff8c00;
 }
 
 form {
     margin-bottom: 20px;
 }
 
-input[type="text"] {
+input {
     padding: 10px;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     font-size: 16px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-input[type="submit"] {
+button {
     padding: 10px 20px;
-    background-color: #007bff;
+    font-size: 16px;
+    background-color: #ff8c00;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: #e07b00;
 }
 
-h1 {
-    color: #333;
-}
-
-h2 {
-    color: #007bff;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* Animation for index.html */
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 1s;
-}
-
-/* Animation for weather.html */
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.slideIn {
-    animation-name: slideIn;
-    animation-duration: 0.5s;
-}
-
-/* Styles for forecast in weather.html */
-
-.forecast {
+#current-weather, #forecast {
     margin-top: 20px;
+}
+
+#forecast-days {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.forecast li {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.forecast li h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.forecast li p {
-    margin: 0;
-    color: #555;
-}
-
-.day {
-    flex: 0 0 30%; /* Adjust the width as needed */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.forecast-day {
+    flex: 1;
     padding: 10px;
     margin: 5px;
+    background-color: #ff8c00;
+    color: white;
+    border-radius: 4px;
     text-align: center;
 }

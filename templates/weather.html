@@ -1,37 +1,68 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <link rel="stylesheet" type="text/css" href="../static/styles.css">#}
+{##}
+{#    <title>Weather App</title>#}
+{#</head>#}
+{#<body>#}
+{#    <form action="/" method="post">#}
+{#        <label for="city">Enter City:</label>#}
+{#        <input type="text" name="city" id="city" required>#}
+{#        <input type="submit" value="Get Weather">#}
+{#    </form>#}
+{##}
+{#    <h1>Weather in {{ city }}</h1>#}
+{#    <h2>Current Weather</h2>#}
+{#    <p>Temperature: {{ current_temperature }}°C</p>#}
+{#    <p>Humidity: {{ current_humidity }}%</p>#}
+{#    <p>Wind Speed: {{ current_wind_speed }} km/h </p>#}
+{#    <p>Conditions: {{ current_conditions }}</p>#}
+{##}
+{#    <h1>Forecast</h1>#}
+{#<div class="forecast">#}
+{#    {% for day in forecast_days %}#}
+{#    <div class="day">#}
+{#        <h3>{{ day.date }}</h3>#}
+{#        <p><strong>Temperature:</strong> {{ day.temperature }}°C</p>#}
+{#        <p><strong>Conditions:</strong> {{ day.conditions }}</p>#}
+{#    </div>#}
+{#    {% endfor %}#}
+{#</div>#}
+{##}
+{##}
+{#</body>#}
+{#</html>#}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/styles.css">
-
-    <title>Weather App</title>
+    <title>Weather in {{ city }}</title>
 </head>
 <body>
-    <form action="/" method="post">
-        <label for="city">Enter City:</label>
-        <input type="text" name="city" id="city" required>
-        <input type="submit" value="Get Weather">
-    </form>
-
-    <h1>Weather in {{ city }}</h1>
-    <h2>Current Weather</h2>
-    <p>Temperature: {{ current_temperature }}°C</p>
-    <p>Humidity: {{ current_humidity }}%</p>
-    <p>Wind Speed: {{ current_wind_speed }} km/h </p>
-    <p>Conditions: {{ current_conditions }}</p>
-
-    <h1>Forecast</h1>
-<div class="forecast">
-    {% for day in forecast_days %}
-    <div class="day">
-        <h3>{{ day.date }}</h3>
-        <p><strong>Temperature:</strong> {{ day.temperature }}°C</p>
-        <p><strong>Conditions:</strong> {{ day.conditions }}</p>
+    <div id="current-weather">
+        <h2>Current Weather in {{ city }}</h2>
+        <p>Temperature: {{ current_temperature }} °C</p>
+        <p>Humidity: {{ current_humidity }} %</p>
+        <p>Wind Speed: {{ current_wind_speed }} km/h</p>
+        <p>Conditions: {{ current_conditions }}</p>
     </div>
-    {% endfor %}
-</div>
-
-
+    <div id="forecast">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast-days">
+            {% for day in forecast_days %}
+            <div class="forecast-day">
+                <p>{{ day.date }}</p>
+                <p>Temp: {{ day.temperature }} °C</p>
+                <p>{{ day.conditions }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>

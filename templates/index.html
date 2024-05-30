@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/styles.css">
-
-    <title>Weather App</title>
+    <title>WeatherWise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to WeatherWise</h1>
-     <form action="/" method="post">
-        <label for="city">Enter City:</label>
-        <input type="text" name="city" id="city" required>
-        <input type="submit" value="Get Weather">
-    </form>
-    <h1>Weather in {{ city }}</h1>
-    <p>Temperature: {{ temperature }}°C</p>
-    <p>Humidity: {{ humidity }}%</p>
-    <p>Wind Speed: {{ wind_speed }} km/h </p>
-    <p>Conditions: {{ conditions }}</p>
+    <div class="container">
+        <h1>WeatherWise</h1>
+        <form id="weather-form">
+            <input type="text" id="city" name="city" placeholder="Enter city name">
+            <button type="submit">Get Weather</button>
+        </form>
+        <button id="current-location-btn">Get Weather for My Location</button>
 
-
-
+        <div id="current-weather">
+            <h2 id="current-weather-heading">Current Weather</h2>
+            <p id="current-temperature"></p>
+            <p id="current-humidity"></p>
+            <p id="current-wind-speed"></p>
+            <p id="current-conditions"></p>
+        </div>
+        <div id="forecast">
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-days"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
